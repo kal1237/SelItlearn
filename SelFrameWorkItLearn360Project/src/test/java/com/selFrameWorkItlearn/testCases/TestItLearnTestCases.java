@@ -26,6 +26,6 @@ public class TestItLearnTestCases extends BaseClassItLearn{
 	
 	public void softwareTestingAcademy()
 	{
-		
+		System.out.println("clicking on Software testing academy");
 	}
 }
