@@ -24,7 +24,7 @@ public void loginDetails(String Uname,String Pwd)
 	userName.sendKeys(Uname);
 	passWord.sendKeys(Pwd);
 	submit.click();
-	
+	System.out.println("login success");
 	
 }
 
