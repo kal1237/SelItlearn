@@ -21,7 +21,7 @@ public class TestItLearnTestCases extends BaseClassItLearn{
 
 	public void allCourses()
 	{
-		
+	System.out.println("All Courses");
 	}
 	
 	public void softwareTestingAcademy()
