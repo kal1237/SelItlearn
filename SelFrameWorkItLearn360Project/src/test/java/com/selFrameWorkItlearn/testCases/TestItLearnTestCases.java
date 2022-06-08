@@ -20,7 +20,7 @@ public class TestItLearnTestCases extends BaseClassItLearn{
 
 	}
 
-	@Test(priority=2)
+	@Test(dependsOnMethods="loginItLearn")
 	public void allCourses()
 	{
 		logger=report.createTest("All courses test case 1");
@@ -28,11 +28,17 @@ public class TestItLearnTestCases extends BaseClassItLearn{
 		logger.info("Starting Application");
 		ac1.allCourses();
 		logger.pass("TestCase1 was successfull");
-		System.out.println("All Courses");
+		
 	}
-
-	public void softwareTestingAcademy()
+@Test(dependsOnMethods="allCourses")
+	public void automationTestingWithTestNG()
 	{
-		System.out.println("clicking on Software testing academy");
+		System.out.println("clicking on automationTestingWithTestNG");
+		logger=report.createTest("All courses test case 2");
+		AllCourses ac2=PageFactory.initElements(driver,AllCourses.class);
+		logger.info("Starting Application");
+		ac2.automationTestingWithTestNG();
+		logger.pass("TestCase2 was successfull");
+		
 	}
 }
