@@ -31,7 +31,7 @@ public class TestItLearnTestCases extends BaseClassItLearn{
 		
 	}
 @Test(dependsOnMethods="allCourses")
-	public void automationTestingWithTestNG()
+	public void automationTestingWithTestNG() throws InterruptedException
 	{
 		System.out.println("clicking on automationTestingWithTestNG");
 		logger=report.createTest("All courses test case 2");

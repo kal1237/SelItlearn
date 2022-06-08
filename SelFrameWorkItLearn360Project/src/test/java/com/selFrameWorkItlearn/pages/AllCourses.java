@@ -32,7 +32,7 @@ public class AllCourses {
 	@FindBy(xpath="//*[@id=\"nav-menu-item-12352\"]/a/div/span") WebElement automation_Testing_with_Cucumber;
 	@FindBy(xpath="//*[@id=\"post-10595\"]/div[1]/div/div[2]/h1") WebElement checkTitle1;
 	@FindBy(xpath="//*[@id=\"post-10595\"]/div[1]/div/div[2]/p[2]") WebElement checkText1;
-	
+	@FindBy(id="hls-player") WebElement hlsPlayer;
 	
 	public void allCourses()
 	{
@@ -48,11 +48,17 @@ public class AllCourses {
 		 automationTestingwithTestNG.click();
 		 }
 	
-	public void automationTestingWithTestNG()
+	public void automationTestingWithTestNG() throws InterruptedException
 	{
 		Assert.assertEquals("Automation Testing with TestNG",checkTitle1.getText() );
 		System.out.println("Expected title for automation testing is correct");
 		Assert.assertEquals("Automation testing with TestNG is designed to cover all categories of testing: Unit, functional, end-to-end, integration, etc. using TestNG with different annotations, Add-ons, and other functionalities. JUnit testing with different types of annotations and assertions.", checkText1.getText());
 	System.out.println("Expected text for automation");
+	Actions action1=new Actions(driver);
+	action1.moveToElement(hlsPlayer);
+	hlsPlayer.click();
+	System.out.println("the video is playing when clicked");
+	Thread.sleep(6000);
 	}
+	
 }
