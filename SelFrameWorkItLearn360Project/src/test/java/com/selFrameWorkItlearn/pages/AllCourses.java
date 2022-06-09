@@ -1,5 +1,6 @@
 package com.selFrameWorkItlearn.pages;
 
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -60,5 +61,33 @@ public class AllCourses {
 	System.out.println("the video is playing when clicked");
 	Thread.sleep(6000);
 	}
+	
+	@FindBy(xpath="//*[@id=\"left-menu\"]/div[1]/li/a") WebElement overView;
+	@FindBy(xpath="//*[@id=\"left-menu\"]/div[2]/li/a") WebElement curriculum;
+	@FindBy(xpath="//*[@id=\"left-menu\"]/div[3]/li/a") WebElement comboCourses;
+	@FindBy(xpath="//*[@id=\"section-8899\"]/ul/li[1]/a") WebElement testNGIntroduction;
+	@FindBy(xpath="//*[@id=\"popup-header\"]/div[2]/div/form/div/button") WebElement anyDoubtButton;
+	@FindBy(xpath="//*[@id=\"step1\"]/p") WebElement closePopUp;
+	@FindBy(xpath="//*[@id=\"popup-header\"]/div[2]/div/form/button") WebElement completeButton;
+	@FindBy(xpath="//*[@id=\"section-8899\"]/h4") WebElement testNG;
+	
+	public void automationTabsCheck()
+	{
+		overView.click();
+		Assert.assertEquals("Overview", overView.getText());
+		System.out.println("Overview Text is correct");
+		comboCourses.click();
+		Assert.assertEquals("Combo Courses", comboCourses.getText());
+		curriculum.click();
+		Assert.assertEquals("Curriculum",curriculum.getText() );
+		System.out.println("curriculum Text is correct");
+		
+		
+				
+	}
+	
+	
+	
+	
 	
 }
