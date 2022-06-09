@@ -3,6 +3,7 @@ package com.selFrameWorkItlearn.pages;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.testng.Assert;
 
@@ -27,8 +28,10 @@ WebDriver driver;
 	public void testNGIntro()
 	{
 		curriculum.click();
+		Actions action=new Actions(driver);
+		action.moveToElement(testNG);
 		testNG.click();
-				testNGIntroduction.click();
+		testNGIntroduction.click();
 		System.out.println("The ppt is shown");
 		anyDoubtButton.click();
 		closePopUp.click();

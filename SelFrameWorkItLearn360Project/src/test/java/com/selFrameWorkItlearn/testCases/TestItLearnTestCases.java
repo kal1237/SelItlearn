@@ -10,7 +10,7 @@ import com.selFrameWorkItlearn.pages.LoginPage;
 
 public class TestItLearnTestCases extends BaseClassItLearn{
 
-	@Test(priority=1)
+	@Test(priority=1,enabled=false)
 	public void loginItLearn()
 	{
 		logger=report.createTest("Login to ItLearn Portal");
@@ -21,7 +21,7 @@ public class TestItLearnTestCases extends BaseClassItLearn{
 
 	}
 
-	@Test(dependsOnMethods="loginItLearn")
+	@Test(priority=2)
 	public void allCourses()
 	{
 		logger=report.createTest("All courses test case 1");
@@ -54,13 +54,15 @@ public void automationTestingTabs()
 	System.out.println("TestNG introduction is opening and working as expected");
 	
 }
-@Test(priority=6)
-public void testNGIntrod()
+@Test(dependsOnMethods="automationTestingTabs")
+public void testNGIntrod() throws InterruptedException
 {
 	logger=report.createTest("All courses test case 4");
 	AllCoursesTestNG act=PageFactory.initElements(driver, AllCoursesTestNG.class);
 	logger.info("Starting Application");
 	act.testNGIntro();
+	Thread.sleep(3000);
+	logger.pass("test case4");
 	logger.pass("TestCase 4 to check the tabs is successfull");
 	
 	System.out.println("TestNG introduction is opening and working as expected");

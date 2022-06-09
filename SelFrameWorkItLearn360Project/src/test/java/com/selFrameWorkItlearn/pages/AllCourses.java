@@ -59,7 +59,7 @@ public class AllCourses {
 	action1.moveToElement(hlsPlayer);
 	hlsPlayer.click();
 	System.out.println("the video is playing when clicked");
-	Thread.sleep(6000);
+	Thread.sleep(1000);
 	}
 	
 	@FindBy(xpath="//*[@id=\"left-menu\"]/div[1]/li/a") WebElement overView;
